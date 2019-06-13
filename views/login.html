@@ -16,7 +16,7 @@
             padding: 20px 0 20px 0;
         }
         .login-form input[type="password"],
-        .login-form input[type="text"] {
+        .login-form input[type="email"] {
             width: 100%;
             padding: 15px;
             border: 1px solid #dddddd;
@@ -40,10 +40,10 @@
     <h1>Login Form</h1>
     <form action="login" method="post">
         <p>
-            <input type="text" id="email-input" placeholder="Enter your email address.">
+            <input type="email" id="email-input" placeholder="Enter your email address." name="email">
         </p>
         <p>
-            <input type="password" id="password-input" placeholder="Enter your password.">
+            <input type="password" id="password-input" placeholder="Enter your password." name="password">
         </p>
         <p>
             <input type="submit" value="Login">
