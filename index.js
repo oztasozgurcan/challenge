@@ -8,7 +8,7 @@ const path = require('path');
 
 // Initializations
 const app = exp();
-require('./db');
+require('./database');
 require('./config/passport');
 
 // settings
@@ -20,6 +20,7 @@ njk.configure('views', {
     cache: false,
     express: app
 });
+app.set('view engine', 'html');
 
 // middlewares
 
@@ -51,7 +52,7 @@ app.use(require('./routes/myalbums'));
 
 // static fields
 
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(exp.static(path.join(__dirname, 'public')));
 
 // server listens to
 
