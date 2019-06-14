@@ -66,8 +66,13 @@
             xhr.onload = function () {
               var photos = JSON.parse(this.responseText);
 
+              console.log(photos);
+
               for(var k in photos){
-                  if(k === i){
+
+                  //console.log("k ->", photos[k].url);
+
+                  if(k == i){
                       output +=
                           '<ul>' +
                                 '<img src=\"' + photos[k].url + '\">' +
@@ -75,7 +80,7 @@
                   }
               }
               console.log(output);
-              document.getElementById('images-showport').innerHTML = output;
+              document.getElementById('image-showport').innerHTML = output;
             };
 
             xhr.send();
@@ -98,6 +103,7 @@
                 for (var i in albums) {
                     if (albums[i].albumId === z) {
                         if (count < 8) {
+
                             output +=
                                 '<ul>' +
                                     '<a onclick="load(' + albums[i].id + ')">' +
