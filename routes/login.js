@@ -12,14 +12,18 @@ router.post('/login', (req, res) => {
 
     if(email === 'a@b.com'){
         if(password === "123456"){
-            res.redirect('myalbums');
+            req.flash('info', 'You\'ve passed.');
+
+            req.session.isLoggedIn = true;
+
+            return res.redirect('myalbums');
         } else {
-            res.redirect('login');
             console.log('Invalid password.');
+            return res.redirect('login');
         }
     } else {
-        res.redirect('login');
         console.log('Invalid email.');
+        return res.redirect('login');
     }
 
 });

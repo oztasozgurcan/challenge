@@ -1,9 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Login</title>
-    <style>
+{% extends "layout.html" %}
+
+{% block title %}Login{% endblock %}
+
+{% block styles %}
+    <style type="text/css">
         .login-form {
             width: 300px;
             margin: 0 auto;
@@ -34,22 +34,21 @@
             color: #ffffff;
         }
     </style>
-</head>
-<body>
-<div class="login-form">
-    <h1>Login Form</h1>
-    <form action="login" method="post">
-        <p>
-            <input type="email" id="email-input" placeholder="Enter your email address." name="email">
-        </p>
-        <p>
-            <input type="password" id="password-input" placeholder="Enter your password." name="password">
-        </p>
-        <p>
-            <input type="submit" value="Login">
-        </p>
-    </form>
-</div>
+{% endblock %}
 
-</body>
-</html>
+{% block content %}
+    <div class="login-form">
+        <h1>Login Form</h1>
+        <form action="login" method="post">
+            <p>
+                <input type="email" id="email-input" placeholder="Enter your email address." name="email">
+            </p>
+            <p>
+                <input type="password" id="password-input" placeholder="Enter your password." name="password">
+            </p>
+            <p>
+                <input type="submit" value="Login">
+            </p>
+        </form>
+    </div>
+{% endblock %}
