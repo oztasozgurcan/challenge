@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <style type="text/css">
+        .message {
+            padding: 6px 12px;
+            margin-bottom: 12px;
+            border-radius: 4px;
+        }
+        .message.info {
+            color: #535b63;
+            background-color: lightblue;
+        }
+    </style>
+    {% block styles %}{% endblock %}
+</head>
+<body>
+    {% if messages.info %}
+        <div class="message info">{{ messages.info }}</div>
+    {% endif %}
+
+    {% block content %}{% endblock %}
+
+    {% block scripts %}{% endblock %}
+</body>
+</html>

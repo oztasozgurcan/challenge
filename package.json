@@ -2,17 +2,17 @@
   "name": "challenge",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.js",r
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js"
+    "start": "nodemon index.js --watch ./views/**/*.html"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
-    "connect-flash": "^0.1.1",
     "express": "^4.17.1",
+    "express-flash": "0.0.2",
     "express-session": "^1.16.2",
     "mongoose": "^5.5.15",
     "nodemon": "^1.19.1",
