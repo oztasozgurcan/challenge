@@ -7,52 +7,48 @@
         My Albums and Photos
     </div>
     <div id="albums"></div>
-    <div id="complete-layout">
-        <div id="vertical-layout" class="vertical-layout">
-            <div id="horizontal-layout" class="horizontal-layout">
-                <div id="album-list" class="album-list">
-                        <table>
-                            <tr>
-                                <a id="album1" onclick="getData(1)">Album1</a>
-                            </tr>
-                            <tr>
-                                <a id="album2" onclick="getData(2)">Album2</a>
-                            </tr>
-                            <tr>
-                                <a id="album3" onclick="getData(3)">Album3</a>
-                            </tr>
-                            <tr>
-                                <a id="album4" onclick="getData(4)">Album4</a>
-                            </tr>
-                            <tr>
-                                <a id="album5" onclick="getData(5)">Album5</a>
-                            </tr>
-                            <tr>
-                                <a id="album6" onclick="getData(6)">Album6</a>
-                            </tr>
-                            <tr>
-                                <a id="album7" onclick="getData(7)">Album7</a>
-                            </tr>
-                            <tr>
-                                <a id="album8" onclick="getData(8)">Album8</a>
-                            </tr>
-                            <tr>
-                                <a id="album9" onclick="getData(9)">Album9</a>
-                            </tr>
-                            <tr>
-                                <a id="album10" onclick="getData(10)">Album10</a>
-                            </tr>
-                        </table>
-                    </div>
-                <div id="thumbnail-4-2" class="thumbnail-4-2">
+        <div id="horizontal-layout" class="horizontal-layout">
+            <div id="album-list" class="album-list">
+                <table>
+                    <tr>
+                        <a id="album1" onclick="getData(1)">Album1</a>
+                    </tr>
+                    <tr>
+                        <a id="album2" onclick="getData(2)">Album2</a>
+                    </tr>
+                    <tr>
+                        <a id="album3" onclick="getData(3)">Album3</a>
+                    </tr>
+                    <tr>
+                        <a id="album4" onclick="getData(4)">Album4</a>
+                    </tr>
+                    <tr>
+                        <a id="album5" onclick="getData(5)">Album5</a>
+                    </tr>
+                    <tr>
+                        <a id="album6" onclick="getData(6)">Album6</a>
+                    </tr>
+                    <tr>
+                        <a id="album7" onclick="getData(7)">Album7</a>
+                    </tr>
+                    <tr>
+                        <a id="album8" onclick="getData(8)">Album8</a>
+                    </tr>
+                    <tr>
+                        <a id="album9" onclick="getData(9)">Album9</a>
+                    </tr>
+                    <tr>
+                        <a id="album10" onclick="getData(10)">Album10</a>
+                    </tr>
+                </table>
+                </div>
+                <div id="thumbnail-4-2" class="thumbnail-4-2">                            
 
                 </div>
             </div>
             <div id="image-showport" class="image-showport">
 
             </div>
-        </div>
-    </div>
 {% endblock %}
 {% block scripts %}
     <script type="text/javascript">
@@ -74,10 +70,12 @@
               for(var k in photos){
 
                   if(k == i){
-                      output +=
-                          '<ul>' +
-                                '<img src=\"' + photos[k-1].url + '\">' +
-                          '</ul>';
+                      output += 
+                        '<div id=\"big-image\">' +
+                            '<ul>' +
+                                    '<img src=\"' + photos[k-1].url + '\">' +
+                            '</ul>' +
+                        '</div>';
                   }
               }
               
@@ -107,11 +105,13 @@
                         if (count < 8) {
 
                             output +=
+                            '<div id=\"placeholder\">' +
                                 '<ul>' +
                                     '<a onclick="load(' + albums[i].id + ')">' +
                                         '<img src=\"' + albums[i].thumbnailUrl + '\">' +
                                     '</a>' +
-                                '</ul>';
+                                '</ul>' +
+                            '</div>';
                             count++;
                         }
                     }
