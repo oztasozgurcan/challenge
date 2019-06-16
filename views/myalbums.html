@@ -3,7 +3,9 @@
 {% block title %}My Albums{% endblock %}
 
 {% block content %}
-    <h3> My Albums and Photos </h3>
+    <div id="header" class="header">
+        My Albums and Photos
+    </div>
     <div id="albums"></div>
     <div id="complete-layout">
         <div id="vertical-layout" class="vertical-layout">
@@ -56,6 +58,9 @@
     <script type="text/javascript">
 
         function load(i){
+            
+            console.log(i);
+
             var xhr = new XMLHttpRequest();
             var output = '';
 
@@ -66,20 +71,17 @@
             xhr.onload = function () {
               var photos = JSON.parse(this.responseText);
 
-              console.log(photos);
-
               for(var k in photos){
-
-                  //console.log("k ->", photos[k].url);
 
                   if(k == i){
                       output +=
                           '<ul>' +
-                                '<img src=\"' + photos[k].url + '\">' +
+                                '<img src=\"' + photos[k-1].url + '\">' +
                           '</ul>';
                   }
               }
-              console.log(output);
+              
+
               document.getElementById('image-showport').innerHTML = output;
             };
 

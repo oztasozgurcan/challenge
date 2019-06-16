@@ -3,7 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}{% endblock %}</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
     <style type="text/css">
+        .header {
+            text-align: center;
+            font-family: 'Open Sans', sans-serif;
+            font-weight: bold;
+            background-color: bisque;
+            color: black;
+            font-size: xx-large;
+            padding: 10px;
+            border-radius: 10px;
+            border: 2px solid black;
+        }
+        .header:hover{
+            color: blue;
+        }
         .message {
             padding: 6px 12px;
             margin-bottom: 12px;
@@ -16,14 +31,40 @@
         .album-list{
             display: grid;
             grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+            font-family: 'Open Sans', sans-serif;
+            font-weight: bolder;
+            font-size: medium;
+            text-align: center;
+            background-color:bisque;
+            vertical-align: middle;
+            color: black;
+            padding: 5px;
+            border-radius: 12px;
+            border: 2px solid black;
+        }
+        .album-list:hover{
+            color: blue;
+            font-size: larger;
         }
         .horizontal-layout{
             display: grid;
             grid-template-columns: 30% 70%;
         }
         .thumbnail-4-2 {
+            border: 2px solid black;
+            border-radius: 12px;
             display: grid;
             grid-template-columns: 25% 25% 25% 25%;
+            background-color: bisque;
+        }
+        .image-showport {
+            border: 2px solid black;
+            border-radius: 12px;
+            align-self: center;
+            background-color: bisque;
+        }
+        .albums {
+            background: black;
         }
 
     </style>
