@@ -1,0 +1,91 @@
+.image-rounder(@radius: 50%){
+  border-radius: @radius;
+}
+
+.image-border(@radius: 5px; @color:solid black){
+  border:@radius @color;
+}
+
+.div-border(@radius: 2px; @color:solid crimson){
+  border:@radius @color;
+}
+
+.back-color(@color: bisque){
+  background-color: @color;
+}
+
+.padder(@padder: 20px){
+  padding: @padder;
+}
+
+.header {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  .back-color;
+  color: black;
+  font-size: xx-large;
+  padding: 10px;
+  .div-border;
+}
+.header:hover{
+  color: blue;
+}
+.message {
+  padding: 6px 12px;
+  margin-bottom: 12px;
+  border-radius: 4px;
+}
+.message.info {
+  color: #535b63;
+  background-color: lightblue;
+}
+.album-list{
+  display: grid;
+  grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bolder;
+  font-size: medium;
+  text-align: center;
+  .back-color;
+  vertical-align: middle;
+  color: black;
+  padding: 5px;
+  .div-border;
+}
+.album-list:hover{
+  color: blue;
+  font-size: larger;
+}
+.horizontal-layout{
+  display: grid;
+  grid-template-columns: 30% 70%;
+}
+.thumbnail-4-2 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  .back-color;
+  grid-gap: 20px;
+  .padder;
+  .div-border;
+}
+.image-showport {
+  align-self: center;
+  .back-color;
+}
+.placeholder img {
+  display: block;
+  .image-border;
+  .image-rounder;
+  text-align: center;
+}
+.big-image {
+  vertical-align: middle;
+  text-align: center;
+  .padder;
+  .div-border;
+}
+.big-image img {
+  .image-rounder;
+  .image-border;
+}
