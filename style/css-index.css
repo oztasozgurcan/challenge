@@ -1,0 +1,10 @@
+.login-route {
+    font-family: 'Open Sans', sans-serif;
+    font-size: larger;
+    color: crimson;
+    text-align: center;
+}
+.login-route:hover{
+    color:navy;
+    font-size: xx-large;
+}
