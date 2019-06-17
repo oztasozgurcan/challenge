@@ -4,8 +4,13 @@ module.exports = function(grunt){
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         less:{
-            files: {
-                'public/css/css-myalbums.css': 'public/css/less-layout.less'
+            development:{
+                options:{
+                    paths: 'public/css/'
+                },
+                files: {
+                    'public/css/css-myalbums.css': 'public/css/less-layout.less'
+                }
             }
         },
         cssmin: {
@@ -19,8 +24,14 @@ module.exports = function(grunt){
             files: ['Gruntfile.js', 'src/**/*.js']
         },
         watch: {
-            files: ['<%= jshint.files %>'],
-            tasks: ['jshint']
+            jshint: {
+                files: ['<%= jshint.files %>'],
+                tasks: ['jshint']
+            },
+            less: {
+                files: ['public/css/*.less'],
+                tasks: ['less', 'cssmin']
+            }
         }
     });
 
@@ -33,5 +44,5 @@ module.exports = function(grunt){
     grunt.loadNpmTasks('grunt-contrib-less');
 
     // Default task
-    grunt.registerTask('default', ['less', 'cssmin', 'jshint']);
+    grunt.registerTask('default', ['less', 'cssmin', 'jshint', 'watch']);
 };

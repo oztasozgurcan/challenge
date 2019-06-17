@@ -17,16 +17,31 @@
 .padder(@padder: 20px){
   padding: @padder;
 }
-
-.header {
+.logout-button {
+  display: block;
+  width: 115px;
+  height: 25px;
+  background: #4E9CAF;
   text-align: center;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  font-size: medium;
+  margin: auto;
+  vertical-align: middle;
+}
+.header-template {
+  display: grid;
+  grid-template-columns: 85% 15%;
+  .back-color;
+  .div-border;
+}
+.header{
   font-family: 'Open Sans', sans-serif;
   font-weight: bold;
-  .back-color;
-  color: black;
   font-size: xx-large;
-  padding: 10px;
-  .div-border;
+  color: black;
+  text-align: center;
 }
 .header:hover{
   color: blue;
