@@ -55,8 +55,6 @@
 
         function load(i){
 
-            console.log(i);
-
             var xhr = new XMLHttpRequest();
             var output = '';
 
@@ -76,7 +74,6 @@
                         '</div>';
                   }
               }
-
 
               document.getElementById('image-showport').innerHTML = output;
             };
@@ -115,11 +112,9 @@
 
                 var Id = 'thumbnail-4-2';
                 document.getElementById(Id).innerHTML = output;
-
             };
 
             xhr.send();
-
         }
 
     </script>
