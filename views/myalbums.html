@@ -3,8 +3,11 @@
 {% block title %}My Albums{% endblock %}
 
 {% block content %}
-    <div id="header" class="header">
-        My Albums and Photos
+    <div id="header" class="header-template">
+        <h1 class="header">My Albums and Photos</h1>
+        <div class="logout-button">
+            <a href="logout">Logout</a>
+        </div>
     </div>
     <div class="albums"></div>
         <div id="horizontal-layout" class="horizontal-layout">
@@ -55,8 +58,6 @@
 
         function load(i){
 
-            console.log(i);
-
             var xhr = new XMLHttpRequest();
             var output = '';
 
@@ -76,7 +77,6 @@
                         '</div>';
                   }
               }
-
 
               document.getElementById('image-showport').innerHTML = output;
             };
@@ -115,11 +115,9 @@
 
                 var Id = 'thumbnail-4-2';
                 document.getElementById(Id).innerHTML = output;
-
             };
 
             xhr.send();
-
         }
 
     </script>

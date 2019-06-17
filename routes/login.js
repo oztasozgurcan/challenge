@@ -2,7 +2,13 @@ const express = require('express');
 const router = express.Router();
 
 router.get('/login', (req, res) => {
-    res.render('login');
+    return res.render('login');
+});
+
+router.get('/logout', (req, res) => {
+    req.session.isLoggedIn = false;
+    req.flash('info', 'You\'ve successfully logged out.');
+    return res.render('index');
 });
 
 router.post('/login', (req, res) => {
@@ -12,20 +18,21 @@ router.post('/login', (req, res) => {
 
     if(email === 'a@b.com'){
         if(password === "123456"){
-            req.flash('info', 'You\'ve passed.');
-
+            req.flash('info', 'You\'ve successfully logged in.');
             req.session.isLoggedIn = true;
 
             return res.redirect('myalbums');
         } else {
-            console.log('Invalid password.');
+            req.flash('info', 'Invalid password, try again.');
             return res.redirect('login');
         }
     } else {
-        console.log('Invalid email.');
+        req.flash('info', 'Invalid email address, try again.');
         return res.redirect('login');
     }
 
 });
+
+
 
 module.exports = router;
