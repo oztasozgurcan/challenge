@@ -13,8 +13,7 @@
             color: black;
             font-size: xx-large;
             padding: 10px;
-            border-radius: 10px;
-            border: 2px solid black;
+            border: 2px solid crimson;
         }
         .header:hover{
             color: blue;
@@ -39,8 +38,7 @@
             vertical-align: middle;
             color: black;
             padding: 5px;
-            border-radius: 12px;
-            border: 2px solid black;
+            border: 2px solid crimson;
         }
         .album-list:hover{
             color: blue;
@@ -51,30 +49,32 @@
             grid-template-columns: 30% 70%;
         }
         .thumbnail-4-2 {
-            border: 2px solid black;
-            border-radius: 12px;
             display: grid;
-            grid-template-columns: 25% 25% 25% 25%;
+            grid-template-columns: repeat(4, 1fr);
             background-color: bisque;
+            grid-gap: 20px;
+            padding: 20px;
+            border: 2px solid crimson;
         }
         .image-showport {
-            border: 2px solid black;
-            border-radius: 12px;
             align-self: center;
             background-color: bisque;
         }
-        .albums {
-            background: black;
-        }
-        .placeholder {
-            border: 1px solid black;
-            border-radius: 3px;
+        .placeholder img {
+            display: block;
+            border: 5px solid black;
+            border-radius: 50%;
+            text-align: center;
         }
         .big-image {
-            border: 2px solid black;
-            border-radius: 6px;
             vertical-align: middle;
             text-align: center;
+            padding: 20px;
+            border: 2px solid crimson;
+        }
+        .big-image img {
+            border-radius: 50%;
+            border: 5px solid black;
         }
 
     </style>
