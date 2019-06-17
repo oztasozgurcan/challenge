@@ -17,6 +17,12 @@
 .padder(@padder: 20px){
   padding: @padder;
 }
+.fontfam(@fammer: 'Open Sans'){
+  font-family: @fammer;
+}
+a{
+  text-decoration: none;
+}
 .logout-button {
   display: block;
   width: 115px;
@@ -29,6 +35,7 @@
   font-size: medium;
   margin: auto;
   vertical-align: middle;
+  .fontfam;
 }
 .header-template {
   display: grid;
@@ -37,7 +44,7 @@
   .div-border;
 }
 .header{
-  font-family: 'Open Sans', sans-serif;
+  .fontfam;
   font-weight: bold;
   font-size: xx-large;
   color: black;
@@ -58,7 +65,7 @@
 .album-list{
   display: grid;
   grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
-  font-family: 'Open Sans', sans-serif;
+  .fontfam;
   font-weight: bolder;
   font-size: medium;
   text-align: center;

@@ -1,3 +1,6 @@
+a {
+  text-decoration: none;
+}
 .logout-button {
   display: block;
   width: 115px;
@@ -10,6 +13,7 @@
   font-size: medium;
   margin: auto;
   vertical-align: middle;
+  font-family: 'Open Sans';
 }
 .header-template {
   display: grid;
@@ -18,7 +22,7 @@
   border: 2px solid crimson;
 }
 .header {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Open Sans';
   font-weight: bold;
   font-size: xx-large;
   color: black;
@@ -39,7 +43,7 @@
 .album-list {
   display: grid;
   grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Open Sans';
   font-weight: bolder;
   font-size: medium;
   text-align: center;
