@@ -8,8 +8,6 @@ const path = require('path');
 
 // Initializations
 const app = exp();
-require('./database');
-require('./config/passport');
 
 // settings
 
