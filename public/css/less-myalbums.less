@@ -1,28 +1,31 @@
-.image-rounder(@radius: 50%){
+.image-rounder(@radius: 50%) {
   border-radius: @radius;
 }
 
-.image-border(@radius: 5px; @color:solid black){
-  border:@radius @color;
+.image-border(@radius: 5px; @color:solid black) {
+  border: @radius @color;
 }
 
-.div-border(@radius: 2px; @color:solid crimson){
-  border:@radius @color;
+.div-border(@radius: 2px; @color:solid crimson) {
+  border: @radius @color;
 }
 
-.back-color(@color: bisque){
+.back-color(@color: bisque) {
   background-color: @color;
 }
 
-.padder(@padder: 20px){
+.padder(@padder: 20px) {
   padding: @padder;
 }
-.fontfam(@fammer: 'Open Sans'){
+
+.fontfam(@fammer: 'Open Sans') {
   font-family: @fammer;
 }
-a{
+
+a {
   text-decoration: none;
 }
+
 .logout-button {
   display: block;
   width: 115px;
@@ -37,32 +40,38 @@ a{
   vertical-align: middle;
   .fontfam;
 }
+
 .header-template {
   display: grid;
   grid-template-columns: 85% 15%;
   .back-color;
   .div-border;
 }
-.header{
+
+.header {
   .fontfam;
   font-weight: bold;
   font-size: xx-large;
   color: black;
   text-align: center;
 }
-.header:hover{
+
+.header:hover {
   color: blue;
 }
+
 .message {
   padding: 6px 12px;
   margin-bottom: 12px;
   border-radius: 4px;
+
+  &.info {
+    color: #535b63;
+    background-color: lightblue;
+  }
 }
-.message.info {
-  color: #535b63;
-  background-color: lightblue;
-}
-.album-list{
+
+.album-list {
   display: grid;
   grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
   .fontfam;
@@ -75,14 +84,17 @@ a{
   padding: 5px;
   .div-border;
 }
-.album-list:hover{
+
+.album-list:hover {
   color: blue;
   font-size: larger;
 }
-.horizontal-layout{
+
+.horizontal-layout {
   display: grid;
   grid-template-columns: 30% 70%;
 }
+
 .thumbnail-4-2 {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -91,23 +103,55 @@ a{
   .padder;
   .div-border;
 }
+
 .image-showport {
   align-self: center;
   .back-color;
 }
+
 .placeholder img {
   display: block;
   .image-border;
   .image-rounder;
   text-align: center;
 }
+
 .big-image {
   vertical-align: middle;
   text-align: center;
   .padder;
   .div-border;
 }
+
 .big-image img {
   .image-rounder;
   .image-border;
+}
+
+@media (max-width: 960px) {
+  .horizontal-layout {
+    grid-template-columns: unset;
+    grid-template-rows: min-content min-content;
+  }
+
+  .album-list {
+    width: auto;
+  }
+
+  .thumbnail-4-2 {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .header-template {
+    grid-template-columns: 64% 36%;
+  }
+
+  .placeholder img {
+    max-width: 100%;
+  }
+
+  .big-image img {
+    max-width: 100%;
+  }
+
 }
