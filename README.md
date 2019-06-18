@@ -6,9 +6,17 @@ Thanks for the experience and sharing!
 
 INSTALLATION:
 
---> Cloning repository into your local machine:
+--> Changing your directory to your Desktop:
 
->cd ~/Desktop && mkdir challenge && git clone https://github.com/oztasozgurcan/challenge.git
+>cd ~/Desktop
+
+--> Creating file 'challenge' and direct into it.
+ 
+>mkdir challenge && cd challenge
+
+--> Cloning repository into your local machine.
+
+>git clone https://github.com/oztasozgurcan/challenge.git
 
 --> If you don't have nodejs, you should download it via [Downloads](https://nodejs.org/en/download/):
 
