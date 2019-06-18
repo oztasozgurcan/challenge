@@ -9,7 +9,9 @@ module.exports = function(grunt){
                     paths: 'public/css/'
                 },
                 files: {
-                    'public/css/css-myalbums.css': 'public/css/less-layout.less'
+                    'public/css/css-myalbums.css': 'public/css/less-myalbums.less',
+                    'public/css/css-index.css': 'public/css/less-index.less',
+                    'public/css/css-login.css': 'public/css/less-login.less'
                 }
             }
         },

@@ -40,8 +40,6 @@ app.use(flash());
 app.use((req, res, next) => {
     res.locals.user = req.user || null;
 
-    console.log(req.url, req.session.isLoggedIn);
-
     if(['/', '/login'].indexOf(req.url) !== -1 && req.session.isLoggedIn){
         return res.redirect('/myalbums');
     }
