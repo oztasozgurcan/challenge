@@ -89,3 +89,24 @@ a {
   border-radius: 50%;
   border: 5px solid black;
 }
+@media (max-width: 960px) {
+  .horizontal-layout {
+    grid-template-columns: unset;
+    grid-template-rows: min-content min-content;
+  }
+  .album-list {
+    width: auto;
+  }
+  .thumbnail-4-2 {
+    grid-template-columns: 1fr 1fr;
+  }
+  .header-template {
+    grid-template-columns: 64% 36%;
+  }
+  .placeholder img {
+    max-width: 100%;
+  }
+  .big-image img {
+    max-width: 100%;
+  }
+}
