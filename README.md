@@ -10,13 +10,13 @@ INSTALLATION:
 
 >cd ~/Desktop
 
---> Creating file 'challenge' and direct into it.
- 
->mkdir challenge && cd challenge
-
 --> Cloning repository into your local machine.
 
 >git clone https://github.com/oztasozgurcan/challenge.git
+
+--> Direct into 'challenge'.
+ 
+>cd challenge
 
 --> If you don't have nodejs, you should download it via [Downloads](https://nodejs.org/en/download/):
 

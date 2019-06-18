@@ -28,7 +28,7 @@ module.exports = function (grunt) {
         uglify: {
             mytarget: {
                 files: {
-                    'public/scripts-min.js': ['public/controller/get-myalbums.js', 'public/controller/load-myalbums.js']
+                    'public/scripts-min.js': ['public/functions/get-myalbums.js', 'public/functions/load-myalbums.js']
                 }
             }
         },
