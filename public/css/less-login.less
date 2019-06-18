@@ -1,3 +1,9 @@
+.padwidth(@width: 100%; @pad: 15px; @boxify: border-box){
+  width: @width;
+  padding: @pad;
+  box-sizing: @boxify;
+}
+
 .login-form {
   width: 300px;
   margin: 0 auto;
@@ -11,18 +17,14 @@
 }
 .login-form input[type="password"],
 .login-form input[type="email"] {
-  width: 100%;
-  padding: 15px;
+  .padwidth;
   border: 1px solid #dddddd;
   margin-bottom: 15px;
-  box-sizing:border-box;
 }
 .login-form input[type="submit"] {
-  width: 100%;
-  padding: 15px;
+  .padwidth;
   background-color: #535b63;
   border: 0;
-  box-sizing: border-box;
   cursor: pointer;
   font-weight: bold;
   color: #ffffff;
