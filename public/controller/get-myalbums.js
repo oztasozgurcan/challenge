@@ -1,7 +1,7 @@
 function getData(z) {
 
     // base url of the public API
-    var baseUrl = 'https://jsonplaceholder.typicode.com/albums/1/photos';
+    var baseUrl = '/api/myalbums';
 
     // Initializing the XHR;
     var xhr = new XMLHttpRequest();
