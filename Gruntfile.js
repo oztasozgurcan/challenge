@@ -2,7 +2,9 @@ module.exports = function (grunt) {
 
     //Project Configuration
     grunt.initConfig({
+        // package.json as guide for installed libraries
         pkg: grunt.file.readJSON('package.json'),
+        // less configuration and pre-processing instructions
         less: {
             development: {
                 options: {
@@ -15,12 +17,14 @@ module.exports = function (grunt) {
                 }
             }
         },
+        // cssmin configuration for minifying the css files into one css file.
         cssmin: {
             target: {
                 src: ['public/css/css-index.css', 'public/css/css-login.css', 'public/css/css-myalbums.css'],
                 dest: 'public/styles-min.css'
             }
         },
+        // uglify configuration for compressing the js files into one js file.
         uglify: {
             mytarget: {
                 files: {
@@ -28,15 +32,8 @@ module.exports = function (grunt) {
                 }
             }
         },
-        jshint: {
-            // define the files to lint
-            files: ['Gruntfile.js', 'src/**/*.js']
-        },
+        // watcher mechanism for changes in css/less files
         watch: {
-            jshint: {
-                files: ['<%= jshint.files %>'],
-                tasks: ['jshint']
-            },
             less: {
                 files: ['public/css/*.less'],
                 tasks: ['less', 'cssmin']
@@ -49,10 +46,9 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-concat');
-    grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-uglify-es');
 
     // Default task
-    grunt.registerTask('default', ['less', 'cssmin', 'uglify', 'jshint', 'watch']);
+    grunt.registerTask('default', ['less', 'cssmin', 'uglify', 'watch']);
 };

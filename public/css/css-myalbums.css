@@ -17,7 +17,7 @@ a {
 }
 .header-template {
   display: grid;
-  grid-template-columns: 85% 15%;
+  grid-template-columns: 17fr 3fr;
   background-color: bisque;
   border: 2px solid crimson;
 }
@@ -42,10 +42,10 @@ a {
 }
 .album-list {
   display: grid;
-  grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+  grid-template-rows: repeat(10, 1fr);
   font-family: 'Open Sans';
   font-weight: bolder;
-  font-size: medium;
+  font-size: larger;
   text-align: center;
   background-color: bisque;
   vertical-align: middle;
@@ -55,11 +55,10 @@ a {
 }
 .album-list:hover {
   color: blue;
-  font-size: larger;
 }
 .horizontal-layout {
   display: grid;
-  grid-template-columns: 30% 70%;
+  grid-template-columns: 3fr 7fr;
 }
 .thumbnail-4-2 {
   display: grid;
