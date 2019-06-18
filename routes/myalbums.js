@@ -1,6 +1,14 @@
 const express = require('express');
 const router = express.Router();
 
+const redis = require('redis');
+
+const client = redis.createClient();
+
+client.on('error', (err) => {
+    console.log("Error " + err);
+});
+
 // router for myalbums page for logged in clients
 router.get('/myalbums', (req, res) => {
     // checks the client is logged in or not.
@@ -14,6 +22,32 @@ router.get('/myalbums', (req, res) => {
         // redirect for login page
         return res.redirect('login');
     }
+});
+
+router.get('/api/myalbums', (req, res) => {
+
+    const query = (req.query.query).trim();
+
+    const url = 'https://jsonplaceholder.typicode.com/albums/1/photos';
+
+    return client.get(`url:${query}`, (err, result) => {
+
+        if(result){
+            const output = JSON.parse(result);
+            return res.status(200).json(output);
+        } else {
+            var xhr = new XMLHttpRequest();
+
+            return xhr.open('GET', url).then(response => {
+                const responseJSON = response.data;
+                client.setex(`url:${query}`, 3600, JSON.stringify({ source: 'Redis Cache', responseJSON}));
+                return res.status(200).json({ source: 'Placeholder API', responseJSON});
+            }).catch(err => {
+                return res.json(err);
+            });
+        }
+
+    });
 });
 
 module.exports = router;
