@@ -8,19 +8,6 @@ INSTALLATION:
 
 --> Cloning repository into your local machine:
 
-<<<<<<< HEAD
-cd ~/Desktop && mkdir challenge && git clone https://github.com/oztasozgurcan/challenge.git
-
---> If you don't have nodejs, you should download it via Downloads:
-
---> Installing node_modules:
-
-npm install
-
---> Build / Run the project:
-
-npm build && npm run start
-=======
 >cd ~/Desktop && mkdir challenge && git clone https://github.com/oztasozgurcan/challenge.git
 
 --> If you don't have nodejs, you should download it via [Downloads](https://nodejs.org/en/download/):
@@ -32,7 +19,6 @@ npm build && npm run start
 --> Build / Run the project:
 
 >npm build && npm run start
->>>>>>> 8a8c6587d67b5f204b511b66a1752fe942dc5892
 
 --> The project will be deployed in your port 3000. (localhost:3000)
 
