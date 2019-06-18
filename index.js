@@ -1,7 +1,6 @@
 // Importy
 const exp = require('express');
 const njk =  require('nunjucks');
-const pass = require('passport');
 const sess = require('express-session');
 const flash = require('express-flash');
 const path = require('path');
