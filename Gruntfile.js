@@ -28,7 +28,7 @@ module.exports = function (grunt) {
         uglify: {
             mytarget: {
                 files: {
-                    'public/scripts-min.js': ['public/functions/get-myalbums.js', 'public/functions/load-myalbums.js']
+                    'public/scripts-min.js': ['public/functions/get-myalbums.js', 'public/functions/load-myalbums.js', 'public/functions/validation.js']
                 }
             }
         },
@@ -50,5 +50,6 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify-es');
 
     // Default task
-    grunt.registerTask('default', ['less', 'cssmin', 'uglify', 'watch']);
+    grunt.registerTask('default', ['less', 'cssmin', 'uglify']);
+    grunt.registerTask('develop', ['less', 'cssmin', 'uglify', 'watch']);
 };
