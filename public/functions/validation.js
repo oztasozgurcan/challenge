@@ -1,31 +1,26 @@
-function validate(){
-    var email = document.getElementById('email');
-    var password = document.getElementById('password');
+const login_form = document.getElementById('login-form');
+const login_email = document.getElementById('email-input');
+const login_password = document.getElementById('password-input');
+const login_submit_button = document.getElementById('submit-input');
+var isValidPassword;
+var isValidEmail;
 
-    var isEmailValid, isPasswordValid = false;
+if (login_email && login_password) {
+    login_email.addEventListener('keyup', function (event) {
+        isValidEmail = login_email.checkValidity();
+        isValidPassword = login_password.checkValidity();
 
-    function emailValidated(){
-        if(email.match('\w+@\w+\.com')) {
-            isEmailValid = true;
+        if (isValidEmail && isValidPassword) {
+            login_submit_button.disabled = false;
         } else {
-            isEmailValid = false;
+            login_submit_button.disabled = true;
         }
-    }
-    emailValidated();
-
-    function passwordValidated(){
-        if(!password.match('')) {
-            isPasswordValid = true;
-        } else {
-            isPasswordValid = false;
-        }
-    }
-    passwordValidated();
-
-    if(isEmailValid && isPasswordValid){
-        document.getElementById('submit-input').disabled = false;
-    } else {
-        document.getElementById('submit-input').disabled = true;
-    }
-
+    });
 }
+
+if (login_submit_button) {
+    login_submit_button.addEventListener('click', function (event) {
+        login_form.submit();
+    });
+}
+

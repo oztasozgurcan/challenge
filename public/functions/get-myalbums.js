@@ -1,7 +1,7 @@
 function getData(z) {
 
     // base url of the public API
-    var baseUrl = '/api/myalbums';
+    var baseUrl = 'https://jsonplaceholder.typicode.com/albums/1/photos';
 
     // Initializing the XHR;
     var xhr = new XMLHttpRequest();
@@ -22,8 +22,8 @@ function getData(z) {
         var count = 0;
         for (var i in albums) {
             if (albums[i].albumId === z) {
-                if(width < 960 /* checks for mobile screen width */){
-                    if(count < 4){
+                if (width < 960 /* checks for mobile screen width */) {
+                    if (count < 4) {
                         output +=
                             '<div class=\"placeholder\">' +
                             '<a onclick=\"load(' + albums[i].id + ')\">' +

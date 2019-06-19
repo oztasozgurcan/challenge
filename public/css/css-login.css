@@ -17,13 +17,21 @@
   border: 1px solid #dddddd;
   margin-bottom: 15px;
 }
-.login-form input[type="submit"] {
+.login-form input[type="password"]:invalid,
+.login-form input[type="email"]:invalid {
+  border: 2px dashed blue;
+  background-color: crimson;
+}
+.login-form input[type="button"] {
   width: 100%;
   padding: 15px;
   box-sizing: border-box;
-  background-color: #535b63;
   border: 0;
   cursor: pointer;
   font-weight: bold;
   color: #ffffff;
+  background-color: #535b63;
+}
+.login-form input[type="button"]:disabled {
+  background-color: crimson;
 }
