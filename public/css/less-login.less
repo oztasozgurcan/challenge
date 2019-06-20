@@ -1,4 +1,4 @@
-.padwidth(@width: 100%; @pad: 15px; @boxify: border-box){
+.padwidth(@width: 100%; @pad: 15px; @boxify: border-box) {
   width: @width;
   padding: @pad;
   box-sizing: @boxify;
@@ -9,23 +9,35 @@
   margin: 0 auto;
   font-family: Tahoma, Geneva, sans-serif;
 }
+
 .login-form h1 {
   text-align: center;
   color: #4d4d4d;
   font-size: 24px;
   padding: 20px 0 20px 0;
 }
+
 .login-form input[type="password"],
 .login-form input[type="email"] {
   .padwidth;
   border: 1px solid #dddddd;
   margin-bottom: 15px;
+  &:invalid{
+    border: 2px dashed blue;
+    background-color: crimson;
+  }
 }
-.login-form input[type="submit"] {
+
+.login-form input[type="button"] {
   .padwidth;
-  background-color: #535b63;
   border: 0;
   cursor: pointer;
   font-weight: bold;
   color: #ffffff;
+
+  &:disabled {
+    background-color: crimson;
+  }
+
+  background-color: #535b63;
 }

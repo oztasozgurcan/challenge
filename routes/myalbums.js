@@ -1,18 +1,19 @@
 const express = require('express');
 const router = express.Router();
 
+/*
 const redis = require('redis');
-
 const client = redis.createClient();
 
 client.on('error', (err) => {
     console.log("Error " + err);
 });
+*/
 
 // router for myalbums page for logged in clients
 router.get('/myalbums', (req, res) => {
     // checks the client is logged in or not.
-    if(req.session.isLoggedIn){
+    if (req.session.isLoggedIn) {
         // If so, then the myalbums page is rendered as response.
         return res.render('myalbums');
     } else {
@@ -24,6 +25,7 @@ router.get('/myalbums', (req, res) => {
     }
 });
 
+/*
 router.get('/api/myalbums', (req, res) => {
 
     const query = (req.query.query).trim();
@@ -49,5 +51,6 @@ router.get('/api/myalbums', (req, res) => {
 
     });
 });
+*/
 
 module.exports = router;

@@ -8,16 +8,24 @@
 {% block content %}
     <div class="login-form">
         <h1>Login Form</h1>
-        <form action="login" method="post">
+        <form action="login" method="post" id="login-form">
             <p>
-                <input type="email" id="email-input" placeholder="Enter your email address." name="email">
+                <input type="email" id="email-input" placeholder="Enter your email address." name="email" required>
             </p>
             <p>
                 <input type="password" id="password-input" placeholder="Enter your password." name="password">
             </p>
             <p>
-                <input type="submit" value="Login">
+                <input type="button" value="Login" id="submit-input" disabled>
             </p>
         </form>
     </div>
+{% endblock %}
+
+{% block scripts %}
+
+    <script type="text/javascript" src="/scripts-min.js">
+
+    </script>
+
 {% endblock %}
