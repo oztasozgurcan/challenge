@@ -21,14 +21,14 @@ module.exports = function (grunt) {
         cssmin: {
             target: {
                 src: ['public/css/css-index.css', 'public/css/css-login.css', 'public/css/css-myalbums.css'],
-                dest: 'public/styles-min.css'
+                dest: 'assets/styles-min.css'
             }
         },
         // uglify configuration for compressing the js files into one js file.
         uglify: {
             mytarget: {
                 files: {
-                    'public/scripts-min.js': ['public/functions/get-myalbums.js', 'public/functions/load-myalbums.js', 'public/functions/validation.js']
+                    'assets/scripts-min.js': ['public/functions/get-myalbums.js', 'public/functions/load-myalbums.js', 'public/functions/validation.js']
                 }
             }
         },

@@ -59,7 +59,7 @@ app.use(require('./routes/myalbums'));
 
 // static fields that includes css and js files
 
-app.use(exp.static(path.join(__dirname, 'public')));
+app.use(exp.static(path.join(__dirname, 'assets')));
 
 // server listens to
 
