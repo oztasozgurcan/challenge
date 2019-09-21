@@ -15,13 +15,35 @@ ApplicationStop:
    - location: bin/app-stop.sh
      timeout: 10
      runas: ec2-user
-
+     
+DownloadBundle:
+   - location: bin/downloadbundle.sh
+     timeout: 10
+     runas: ec2-user
+     
+BeforeInstall:
+   - location: bin/before-install.sh
+     timeout: 10
+     runas: ec2-user
+     
+Install:
+   - location: bin/install.sh
+     timeout: 10
+     runas: ec2-user
+     
 AfterInstall:
    - location: bin/install-pkgs.sh
-     timeout: 1200
+     timeout: 100
      runas: ec2-user
 
 ApplicationStart:
    - location: bin/app-start.sh
-     timeout: 60
+     timeout: 15
      runas: ec2-user
+     
+ValidateService:
+   - location: bin/validate-service.sh
+     timeout: 10
+     runas: ec2-user
+     
+
