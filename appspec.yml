@@ -12,16 +12,16 @@ permissions:
 
 hooks:
 ApplicationStop:
-   - location: bin/app-stop
+   - location: bin/app-stop.sh
      timeout: 10
      runas: ec2-user
 
 AfterInstall:
-   - location: bin/install-pkgs
+   - location: bin/install-pkgs.sh
      timeout: 1200
      runas: ec2-user
 
 ApplicationStart:
-   - location: bin/app-start
+   - location: bin/app-start.sh
      timeout: 60
      runas: ec2-user
