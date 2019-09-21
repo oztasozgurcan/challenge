@@ -1,11 +1,32 @@
 version: 0.0
 os: linux
-#files:
-#  - source: /
-#    destination: /var/api/
+files:
+- source: /
+ destination: /home/ec2-user/challenge
+
+permissions:
+- object: /
+   pattern: "**"
+   owner: ec2-user
+   group: ec2-user
+
 hooks:
-  AfterInstall:
-  ApplicationStart:
-    - location: ./npm-start.sh
-      runas: root
-      timeout: 60
+ApplicationStop:
+   - location: bin/app-stop
+     timeout: 10
+     runas: ec2-user
+
+AfterInstall:
+   - location: bin/install-pkgs
+     timeout: 1200
+     runas: ec2-user
+
+ApplicationStart:
+   - location: bin/app-start
+     timeout: 60
+     runas: ec2-user
+
+ValidateService:
+   - location: bin/app-validate
+     timeout: 10
+     runas: ec2-user
