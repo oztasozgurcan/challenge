@@ -1,0 +1,11 @@
+version: 0.0
+os: linux
+#files:
+#  - source: /
+#    destination: /var/api/
+hooks:
+  AfterInstall:
+  ApplicationStart:
+    - location: ./npm-start.sh
+      runas: root
+      timeout: 60
